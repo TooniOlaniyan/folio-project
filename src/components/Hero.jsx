@@ -93,6 +93,7 @@ function Hero() {
          
         }}
         whileHover={{rotateZ:'200deg'}}
+        
       >
         <svg viewBox='0 0 200 200'>
           <motion.path

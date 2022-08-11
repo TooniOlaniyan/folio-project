@@ -7,9 +7,17 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
 }
+html,
+body {
+    &,
+    *{
+        cursor: none;
+    }
+}
 body{
     /* overflow: hidden; */
     background-color: #f2e5d7;
+    
 }
 a{
     text-decoration: none;
