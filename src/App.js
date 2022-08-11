@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import GlobalStyles from './components/GlobalStyles'
+import { ThemeProvider } from 'styled-components'
+import './index.css'
+import {original , invert } from './components/ThemeStyle'
+import Home from './pages/Home'
+import React , {useState} from 'react'
 
+
+export const ThemeContext = React.createContext()
+const themes = {
+  original,
+  invert,
+}
 function App() {
+  const [theme, setTheme] = useState('original')
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <GlobalStyles />
+      <ThemeProvider theme={themes[theme]}>
+        <ThemeContext.Provider value={{ theme, setTheme }}>
+          <Home />
+        </ThemeContext.Provider>
+      </ThemeProvider>
+    </>
+  )
 }
 
 export default App;
