@@ -22,7 +22,7 @@ function Header() {
 
   const letter = {
     initial: {
-      y: 40,
+      y: -40,
     },
     animate: {
       y: 0,
@@ -33,7 +33,7 @@ function Header() {
     <Main>
       <div>
         <motion.p
-          initial={{ y: 50, opacity: 0 }}
+          initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{
             duration: 1.4,
@@ -47,9 +47,9 @@ function Header() {
         <motion.ul variants={menu} initial='initial' animate='animate'>
           <motion.li
             whileHover={{
-              scale: 1.3,
+              scale: 1.2,
               letterSpacing: '2px',
-              transition: { duration: 0.5, ease: 'easeInOut' },
+              transition: { duration: 0.5, ease: [[0.43, 0.13, 0.23, 0.96]] },
             }}
             variants={letter}
             initial='initial'
@@ -61,7 +61,7 @@ function Header() {
             whileHover={{
               scale: 1.2,
               letterSpacing: '2px',
-              transition: { duration: 0.5, ease: 'easeInOut' },
+              transition: { duration: 0.5, ease: [[0.43, 0.13, 0.23, 0.96]] },
             }}
             variants={letter}
             initial='initial'
@@ -73,7 +73,7 @@ function Header() {
             whileHover={{
               scale: 1.2,
               letterSpacing: '2px',
-              transition: { duration: 0.5, ease: 'easeInOut' },
+              transition: { duration: 0.5, ease: [[0.43, 0.13, 0.23, 0.96]] },
             }}
             variants={letter}
             initial='initial'
@@ -85,7 +85,7 @@ function Header() {
             whileHover={{
               scale: 1.2,
               letterSpacing: '2px',
-              transition: { duration: 0.5, ease: 'easeInOut' },
+              transition: { duration: 0.5, ease: [[0.43, 0.13, 0.23, 0.96]] },
             }}
             variants={letter}
             initial='initial'
