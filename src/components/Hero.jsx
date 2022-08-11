@@ -1,7 +1,7 @@
 import React,  {useEffect} from 'react'
 import styled from 'styled-components'
 import { GiSpiderWeb, GiLobArrow } from 'react-icons/gi'
-import { CgMoveDown } from 'react-icons/cg'
+import { FaArrowDown } from 'react-icons/fa'
 import {motion} from 'framer-motion'
 
 
@@ -80,16 +80,19 @@ function Hero() {
       </TextPart>
 
       <Circle
-      initial={{attributeType:{
-        startOffset:'100%'
-      }}}
-        animate={{  rotate: 360 }}
+        initial={{
+          attributeType: {
+            startOffset: '100%',
+          },
+        }}
+        animate={{ rotate: 360 }}
         transition={{
           repeat: Infinity,
           duration: 4,
-          // ease: 'none',
-          bounce:0
+          ease: 'linear',
+         
         }}
+        whileHover={{rotateZ:'200deg'}}
       >
         <svg viewBox='0 0 200 200'>
           <motion.path
@@ -116,6 +119,29 @@ function Hero() {
           </text>
         </svg>
       </Circle>
+
+      <ScrollDown
+        animate={{ y: [20, 0], opacity: [0, 1] }}
+        transition={{ delay: 3, ...transition, staggerChildren: 1 }}
+      >
+        <motion.div
+          animate={{ y:[-30,0],scale:1.2 }}
+          transition={{
+            repeat: Infinity,
+            duration: 1,
+            ease: [0.6, 0.01, -0.05, 0.9],
+            type: 'spring',
+          }}
+        >
+          <FaArrowDown className='arrowDown' />
+        </motion.div>
+        <motion.p
+          animate={{ y: [3, 0], opacity: [0, 1] }}
+          transition={{ delay: 3.2, ...transition }}
+        >
+          Scroll Down
+        </motion.p>
+      </ScrollDown>
     </Section>
   )
 }
@@ -203,6 +229,33 @@ const Circle = styled(motion.div)`
       font-weight: 400;
       fill: #000;
     }
+  }
+`
+const ScrollDown = styled(motion.div)`
+  width: 70px;
+  height: 70px;
+  border: 1.3px solid #262322;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  bottom: 3rem;
+  right: 3rem;
+  overflow: hidden;
+  P {
+    width: min-content;
+    font-size: 12px;
+    text-align: center;
+    font-weight: 600;
+  }
+  .arrowDown {
+    width: 18px;
+    height: 18px;
+  }
+  @media screen and (max-width: 640px) {
+    display: none;
   }
 `
 
