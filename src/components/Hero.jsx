@@ -134,7 +134,7 @@ function Hero() {
             type: 'spring',
           }}
         >
-          <FaArrowDown className='arrowDown' />
+          <FaArrowDown fill='#fff' className='arrowDown' />
         </motion.div>
         <motion.p
           animate={{ y: [3, 0], opacity: [0, 1] }}
@@ -148,13 +148,14 @@ function Hero() {
 }
 
 const Section = styled.section`
-  width: 100vw;
+  /* width: 100vw; */
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 5rem;
+  margin-top: 7rem;
   overflow: hidden;
   gap: 10rem;
+
     @media screen and (max-width: 640px) {
       flex-direction: column;
       gap: 3rem;
@@ -165,6 +166,7 @@ const Section = styled.section`
 const TextPart = styled(motion.div)`
   overflow: hidden;
   width: 50%;
+  height: 100%;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -173,7 +175,7 @@ const TextPart = styled(motion.div)`
   p {
     overflow: hidden;
   }
-  position: relative;
+
   @media screen and (max-width: 640px) {
     width: 92%;
   }
@@ -219,7 +221,7 @@ const TextPart = styled(motion.div)`
 `
 const Circle = styled(motion.div)`
   width: 200px;
-  position: relative;
+  overflow: auto;
   @media screen and (max-width: 640px) {
     display: block;
   }
@@ -228,7 +230,7 @@ const Circle = styled(motion.div)`
     .text {
       font-size: 24px;
       font-weight: 400;
-      fill: #000;
+      fill: #fff;
     }
   }
 `
@@ -242,8 +244,8 @@ const ScrollDown = styled(motion.div)`
   align-items: center;
   flex-direction: column;
   position: absolute;
-  bottom: 3rem;
-  right: 3rem;
+  bottom:6rem;
+  right: 7rem;
   overflow: hidden;
   P {
     width: min-content;

@@ -67,7 +67,7 @@ function Header() {
             initial='initial'
             animate='animate'
           >
-            Projets
+            Skills
           </motion.li>
           <motion.li
             whileHover={{
@@ -79,7 +79,7 @@ function Header() {
             initial='initial'
             animate='animate'
           >
-            Skills
+            Projects
           </motion.li>
           <motion.li
             whileHover={{
@@ -101,7 +101,7 @@ function Header() {
         animate='animate'
         className='hamburger'
       >
-        <Hamburger color='#262322' easing='ease-out' duration={1} />
+        <Hamburger color='#FFF' easing='ease-out' duration={1} />
       </motion.div>
     </Main>
   )
@@ -112,7 +112,6 @@ const Main = styled.header`
   justify-content: space-around;
   gap:15rem;
   align-items: center;
-  width: 100vw;
   padding: 2rem 0;
   max-height: 3rem;
   font-size: 18px;
@@ -131,7 +130,7 @@ const Main = styled.header`
     justify-content: center;
     align-items: center;
     display: flex;
-    color: #262322;
+    color:#fff;
     gap: 2rem;
     cursor: pointer;
     @media screen and (max-width: 640px) {

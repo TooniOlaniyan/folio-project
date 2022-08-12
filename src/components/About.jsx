@@ -1,19 +1,179 @@
 import React from 'react'
 import styled from 'styled-components'
+import {motion} from 'framer-motion'
 
 function About() {
+  const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9] }
+
+  const firstName = {
+    initial: {
+      y: 400,
+      skewY: 30,
+    },
+    animate: {
+      y: 0,
+      skewY: 0,
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.2,
+        ease: [0.6, 0.01, -0.05, 0.9],
+        duration: 2,
+      },
+    },
+  }
+
+const letter = {
+  initial: {
+    y: 0,
+    
+    opacity: 0
+  },
+  animate: {
+    y: 0,
+    
+    opacity: 1,
+    transition: { duration: 1, ...transition },
+  },
+}
   return (
     <Section>
-     
-  
+      <div id='SVG'>
+        <svg
+          width='600px'
+          height='600px'
+          viewBox='0 0 500 500'
+          version='1.1'
+          // xmlns='http://www.w3.org/2000/svg'
+          // xmlnsXlink='http://www.w3.org/1999/xlink'
+        >
+          <g
+            id='btn-circle-wrap'
+            stroke='none'
+            strokeWidth='1'
+            fill='none'
+            fillRule='evenodd'
+          >
+            <g
+              id='btn-circle-wrapper'
+              transform='translate(-237.000000, -465.000000)'
+            >
+              <g id='btn-circle' transform='translate(166.000000, 466.000000)'>
+                <motion.path
+                  initial={{ opacity: 0, pathLength: 0 }}
+                  animate={{ opacity: 1, pathLength: 1 }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 5, ease: [0.6, 0.01, -0.05, 0.9] }}
+                  d='M272.5,401 C383.233092,401 473,311.233092 473,200.5 C473,89.7669077 383.233092,0 272.5,0 C161.766908,0 72,89.7669077 72,200.5'
+                  id='Shape'
+                  stroke='#fff'
+                  opacity='1'
+                  transform='translate(272.500000, 200.500000) scale(-1, -1) translate(-272.500000, -200.500000) '
+                  // strokeDasharray='944.9669799804688'
+                  // style='stroke-dashoffset: 0px;'
+                ></motion.path>
+              </g>
+            </g>
+            <motion.text
+              whileInView={{ opacity: [0, 1], y: [40, 0] }}
+              viewport={{once:true}}
+              transform={{ duration: 4, ease: [0.6, 0.01, -0.05, 0.9] }}
+              className='text'
+              x='40%'
+              y='40%'
+              text-anchor='middle'
+              stroke='#fff'
+              stroke-width='1px'
+              dy='.3em'
+            >
+              ABOUT?
+            </motion.text>
+          </g>
+        </svg>
+      </div>
+      <TextWrapper>
+        <motion.span className='span' variants={firstName} initial='initial' whileInView='animate' viewport={{once:true}}>
+          <motion.span variants={letter}>
+            I am a <span className='stroke'>developer</span> Front-End engineer
+            based in Nigeria.
+          </motion.span>
+          <motion.span variants={letter}>
+            In the <span className='stroke'>Winter</span> Hammertan of 2022, i
+            picked up programming &nbsp;
+          </motion.span>
+
+          <motion.span variants={letter}>
+            from where i left it,and i've been writing code ever since.
+          </motion.span>
+          <motion.span variants={letter}>
+            I have an Insatiable curiosity in imagining and bringing ideas
+            &nbsp;
+          </motion.span>
+          <motion.span variants={letter}>
+            to life on the web. <span>I'm</span> passionate about learning new
+            technologies &nbsp;
+          </motion.span>
+          <motion.span variants={letter}>
+            and how they can be implemented. I love minimal designs with
+            seamless user experience.
+          </motion.span>
+          <span className='stroke'>Ice breaker... &nbsp;</span>
+          <motion.span variants={letter}>
+            I listen to a whole lot of Music i dont discrimite, well maybe Old
+            Fuji 🙃
+          </motion.span>
+        </motion.span>
+      </TextWrapper>
     </Section>
   )
 }
 
 
 const Section = styled.div`
-overflow: hidden;
-    
+  overflow: hidden;
+  max-width: 100vw;
+  margin-top: 12rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media screen and (max-width: 640px) {
+    flex-direction: column;
+    margin-top: 6rem;
+  }
+  svg {
+    padding: 2rem;
+    @media screen and (max-width: 640px) {
+      width: 450px;
+    }
+
+    .text {
+      font-size: 80px;
+      fill: #232622;
+      @media screen and (max-width: 640px) {
+        font-size: 60px;
+      }
+    }
+  }
+`
+const TextWrapper = styled(motion.div)`
+  max-width: 35vw;
+  @media screen and (max-width: 640px) {
+    max-width: 90vw;
+    margin-top: -4rem;
+  }
+  .span {
+    font-size: 22px;
+    letter-spacing: 1px;
+    padding: 4px;
+    font-weight: 500;
+    line-height: 2.3rem;
+    span {
+      overflow: hidden;
+      /* background-color: red; */
+    }
+    .stroke {
+      text-decoration: line-through;
+    }
+  }
 `
 
 

@@ -22,16 +22,20 @@ function CustomCursor() {
   )
 }
 const Cursor = styled.div`
-z-index: 1000;
-width: 25px;
-height: 25px;
-border-radius: 50%;
-border: 3px solid black;
-pointer-events: none;
-overflow: hidden;
-transform: translate3d(0,0,0);
+  z-index: 1000;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 3px solid green;
+  pointer-events: none;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
 
-position: fixed;
+  position: fixed;
+
+  @media screen and (max-width: 640px) {
+    display: none;
+  }
 `
 
 export default CustomCursor

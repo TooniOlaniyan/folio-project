@@ -3,6 +3,7 @@ import About from '../components/About'
 import CustomCursor from '../components/CustomCursor'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
+import Skills from '../components/Skills'
 
 function Home() {
   return (
@@ -10,7 +11,8 @@ function Home() {
       <CustomCursor/>
         <Header />
         <Hero />
-        {/* <About/> */}
+        <About/>
+        <Skills/>
     </div>
   )
 }

@@ -1,6 +1,6 @@
 export const original = {
     body: '#f2e5d7',
-    textColor: '#262322'
+    textColor: '#FFF'
 
 }
 

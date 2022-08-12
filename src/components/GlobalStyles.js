@@ -15,8 +15,8 @@ body {
     }
 }
 body{
-    /* overflow: hidden; */
-    background-color: #f2e5d7;
+    max-width: 100vw;
+    background-color: #0F0E0E;
     
 }
 a{
@@ -26,9 +26,11 @@ li{
     text-decoration: none;
     list-style: none;
 }
-h1 h2 h3 h4 h4 h6{
+h1 ,h2, h3, h4, h4, h6, p , span{
     margin: 0;
     padding: 0;
+    color: white;
+    
 }
 
 `
