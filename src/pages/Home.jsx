@@ -3,6 +3,7 @@ import About from '../components/About'
 import CustomCursor from '../components/CustomCursor'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
+import Project from '../components/Project'
 import Skills from '../components/Skills'
 
 function Home() {
@@ -13,6 +14,7 @@ function Home() {
         <Hero />
         <About/>
         <Skills/>
+        <Project/>
     </div>
   )
 }

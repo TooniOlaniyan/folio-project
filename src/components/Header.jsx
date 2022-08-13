@@ -110,7 +110,7 @@ const Main = styled.header`
   display: flex;
   overflow: hidden;
   justify-content: space-around;
-  gap:15rem;
+  gap: 15rem;
   align-items: center;
   padding: 2rem 0;
   max-height: 3rem;
@@ -119,7 +119,7 @@ const Main = styled.header`
     padding: 2rem;
     gap: 4rem;
   }
-  .hamburger{
+  .hamburger {
     display: none;
     @media screen and (max-width: 640px) {
       display: block;
@@ -130,7 +130,7 @@ const Main = styled.header`
     justify-content: center;
     align-items: center;
     display: flex;
-    color:#fff;
+    color: #d6e5fa;
     gap: 2rem;
     cursor: pointer;
     @media screen and (max-width: 640px) {

@@ -1,8 +1,11 @@
 import React from 'react'
+import {useRef} from 'react'
 import styled from 'styled-components'
 import {motion} from 'framer-motion'
 
 function About() {
+  
+  // const scrollRef = useRef(null)
   const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9] }
 
   const firstName = {
@@ -61,27 +64,24 @@ const letter = {
                 <motion.path
                   initial={{ opacity: 0, pathLength: 0 }}
                   animate={{ opacity: 1, pathLength: 1 }}
-                  viewport={{ once: false }}
-                  transition={{ duration: 5, ease: [0.6, 0.01, -0.05, 0.9] }}
+                  transition={{ duration: 15, ease: [0.6, 0.01, -0.05, 0.9] }}
                   d='M272.5,401 C383.233092,401 473,311.233092 473,200.5 C473,89.7669077 383.233092,0 272.5,0 C161.766908,0 72,89.7669077 72,200.5'
                   id='Shape'
-                  stroke='#fff'
+                  stroke='#D6E5FA'
                   opacity='1'
                   transform='translate(272.500000, 200.500000) scale(-1, -1) translate(-272.500000, -200.500000) '
-                  // strokeDasharray='944.9669799804688'
-                  // style='stroke-dashoffset: 0px;'
                 ></motion.path>
               </g>
             </g>
             <motion.text
               whileInView={{ opacity: [0, 1], y: [40, 0] }}
-              viewport={{once:true}}
-              transform={{ duration: 4, ease: [0.6, 0.01, -0.05, 0.9] }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, ease: [0.6, 0.01, -0.05, 0.9] }}
               className='text'
               x='40%'
               y='40%'
               text-anchor='middle'
-              stroke='#fff'
+              stroke='#D6E5FA'
               stroke-width='1px'
               dy='.3em'
             >
@@ -91,7 +91,13 @@ const letter = {
         </svg>
       </div>
       <TextWrapper>
-        <motion.span className='span' variants={firstName} initial='initial' whileInView='animate' viewport={{once:true}}>
+        <motion.span
+          className='span'
+          variants={firstName}
+          initial='initial'
+          whileInView='animate'
+          viewport={{ once: true }}
+        >
           <motion.span variants={letter}>
             I am a <span className='stroke'>developer</span> Front-End engineer
             based in Nigeria.
@@ -161,7 +167,7 @@ const TextWrapper = styled(motion.div)`
     margin-top: -4rem;
   }
   .span {
-    font-size: 22px;
+    font-size: 20px;
     letter-spacing: 1px;
     padding: 4px;
     font-weight: 500;

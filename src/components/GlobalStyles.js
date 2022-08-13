@@ -29,7 +29,7 @@ li{
 h1 ,h2, h3, h4, h4, h6, p , span{
     margin: 0;
     padding: 0;
-    color: white;
+    color: #D6E5FA;
     
 }
 

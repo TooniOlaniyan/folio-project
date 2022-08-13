@@ -90,10 +90,8 @@ function Hero() {
           repeat: Infinity,
           duration: 4,
           ease: 'linear',
-         
         }}
-        whileHover={{rotateZ:'200deg'}}
-        
+        whileHover={{ rotateZ: '200deg' }}
       >
         <svg viewBox='0 0 200 200'>
           <motion.path
@@ -126,7 +124,7 @@ function Hero() {
         transition={{ delay: 3, ...transition, staggerChildren: 1 }}
       >
         <motion.div
-          animate={{ y:[-30,0],scale:1.2 }}
+          animate={{ y: [-30, 0], scale: 1.2 }}
           transition={{
             repeat: Infinity,
             duration: 1,
@@ -134,7 +132,7 @@ function Hero() {
             type: 'spring',
           }}
         >
-          <FaArrowDown fill='#fff' className='arrowDown' />
+          <FaArrowDown fill='#D6E5FA'  className='arrowDown' />
         </motion.div>
         <motion.p
           animate={{ y: [3, 0], opacity: [0, 1] }}
@@ -185,6 +183,10 @@ const TextPart = styled(motion.div)`
     text-transform: uppercase;
     font-weight: 700;
     line-height: 6rem;
+    transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    &:hover {
+      color: #ff6363;
+    }
     @media screen and (max-width: 640px) {
       font-size: 80px;
       line-height: 5rem;
@@ -230,7 +232,7 @@ const Circle = styled(motion.div)`
     .text {
       font-size: 24px;
       font-weight: 400;
-      fill: #fff;
+      fill: #d6e5fa;
     }
   }
 `
@@ -254,8 +256,8 @@ const ScrollDown = styled(motion.div)`
     font-weight: 600;
   }
   .arrowDown {
-    width: 18px;
-    height: 18px;
+    width: 13px;
+    height: 13px;
   }
   @media screen and (max-width: 640px) {
     display: none;
