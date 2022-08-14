@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import {Link} from 'react-router-dom'
 import { Spiral as Hamburger } from 'hamburger-react'
 import {motion} from 'framer-motion'
+import TimeComponent from './TimeComponent'
 
 function Header() {
   const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9] }
@@ -39,6 +40,7 @@ function Header() {
             duration: 1.4,
             ease: [0.6, 0.01, -0.05, 0.9],
           }}
+          className='headerName'
         >
           Tooni Olaniyan
         </motion.p>
@@ -83,7 +85,7 @@ function Header() {
           </motion.li>
           <motion.li
             whileHover={{
-              scale: 1.2,
+              scale: 1.05,
               letterSpacing: '2px',
               transition: { duration: 0.5, ease: [[0.43, 0.13, 0.23, 0.96]] },
             }}
@@ -101,7 +103,7 @@ function Header() {
         animate='animate'
         className='hamburger'
       >
-        <Hamburger color='#FFF' easing='ease-out' duration={1} />
+        <TimeComponent/>
       </motion.div>
     </Main>
   )
@@ -115,8 +117,15 @@ const Main = styled.header`
   padding: 2rem 0;
   max-height: 3rem;
   font-size: 18px;
+  .headerName{
+     @media screen and (max-width: 640px) {
+      width: max-content;
+      
+     }
+    
+  }
   @media screen and (max-width: 640px) {
-    padding: 2rem;
+    padding: 0 3rem;
     gap: 4rem;
   }
   .hamburger {
@@ -133,6 +142,29 @@ const Main = styled.header`
     color: #d6e5fa;
     gap: 2rem;
     cursor: pointer;
+    li{
+      position: relative;
+      padding: 0.3rem 0;
+        
+    }
+    li::after{
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #ff6363; 
+      transition: all 0.5s ease-out;
+     
+    }
+    li:hover::after{
+      width: 100%;
+    }
+    
+
+
+
     @media screen and (max-width: 640px) {
       display: none;
     }

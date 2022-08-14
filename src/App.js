@@ -14,7 +14,9 @@ const themes = {
   invert,
 }
 function App() {
-  const { scrollYProgress } = useScroll()
+  const { scrollYProgress  , scrollY} = useScroll()
+  console.log(scrollYProgress)
+  // const [isVisible , setIsVisible] = useState(scrollY)
   const [theme, setTheme] = useState('original')
   return (
     <>
@@ -34,14 +36,17 @@ function App() {
     .scrollY {
       position: fixed;
 
-      top: -30rem;
+      top: -45rem;
       left: 2rem;
       bottom: 0;
       width: 0.1px;
-      background: #4e9f3d;
+      background: #fff;
       transform-origin: 0%;
       @media screen and (max-width: 640px) {
         display: none;
+      }
+      @media screen and (max-width: 1024px) {
+        /* display: none; */
       }
     }
   `

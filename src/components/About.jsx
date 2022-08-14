@@ -122,11 +122,7 @@ const letter = {
             and how they can be implemented. I love minimal designs with
             seamless user experience.
           </motion.span>
-          <span className='stroke'>Ice breaker... &nbsp;</span>
-          <motion.span variants={letter}>
-            I listen to a whole lot of Music i dont discrimite, well maybe Old
-            Fuji 🙃
-          </motion.span>
+         
         </motion.span>
       </TextWrapper>
     </Section>
@@ -148,7 +144,12 @@ const Section = styled.div`
   svg {
     padding: 2rem;
     @media screen and (max-width: 640px) {
-      width: 450px;
+      max-width: 90vw;
+    
+      height: 350px;
+      margin: 0 auto;
+      /* border: 2px solid white; */
+      
     }
 
     .text {
@@ -165,6 +166,7 @@ const TextWrapper = styled(motion.div)`
   @media screen and (max-width: 640px) {
     max-width: 90vw;
     margin-top: -4rem;
+    
   }
   .span {
     font-size: 20px;
@@ -174,6 +176,9 @@ const TextWrapper = styled(motion.div)`
     line-height: 2.3rem;
     span {
       overflow: hidden;
+      @media screen and (max-width: 640px) {
+        font-size: 17px;
+      }
       /* background-color: red; */
     }
     .stroke {

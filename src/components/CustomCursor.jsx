@@ -26,7 +26,7 @@ const Cursor = styled.div`
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  border: 3px solid green;
+  border: 3px solid #ea0000;
   pointer-events: none;
   overflow: hidden;
   transform: translate3d(0, 0, 0);

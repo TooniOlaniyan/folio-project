@@ -44,6 +44,10 @@ const Container = styled.div`
   background-color: #2c3333;
   border-radius: 10px;
   overflow: hidden;
+  @media screen and (max-width:640px) {
+    width: 70vw;
+    
+  }
   
 `
 const Image = styled(motion.div)`

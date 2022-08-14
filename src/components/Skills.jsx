@@ -16,14 +16,12 @@ function Skills() {
         <motion.div
           initial={{ opacity: 0, width: 0, scaleX: 0 }}
           whileInView={{ opacity: 1, width: '80vw', scaleX: '100%' }}
-          transition={{ duration: 2, ease: [0.6, 0.01, -0.05, 0.9] }}
-          viewport={{ once: true }}
+          transition={{ duration: 1, ease: 'easeInOut' }}
+          viewport={{ once: true , amount:1 }}
           className='line'
         ></motion.div>
-        <motion.div initial={{y:30 , opacity:0}} 
-        whileInView={{y:0 , opacity:1}} 
-        transition={{duration:1 , ease:'easeIn'}}
-        viewport={{once:true}} 
+        <motion.div 
+        
         className='skillText'>
           <p>My skills </p>
 
@@ -32,8 +30,8 @@ function Skills() {
         <motion.div
           initial={{ opacity: 0, width: 0, scaleX: 0 }}
           whileInView={{ opacity: 1, width: '80vw', scaleX: '100%' }}
-          transition={{ duration: 2, ease: [0.6, 0.01, -0.05, 0.9] }}
-          viewport={{ once: true }}
+          transition={{ duration: 1, ease: 'easeInOut' }}
+          viewport={{ once: true  , amount:1}}
           className='lineReverse'
         ></motion.div>
       </div>
@@ -52,7 +50,7 @@ const Main = styled.div`
   justify-content: center;
   align-items: center;
   /* height: 100vh; */
-  margin-top: 6rem;
+  margin-top: 10rem;
 
   .top {
     width: 80vw;
@@ -89,6 +87,9 @@ const Main = styled.div`
       align-items: flex-end;
       gap: 1rem;
       /* text-align: center; */
+       @media screen and (max-width: 640px) {
+        font-size: 50px;
+       }
     }
   }
 

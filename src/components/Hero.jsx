@@ -175,7 +175,8 @@ const TextPart = styled(motion.div)`
   }
 
   @media screen and (max-width: 640px) {
-    width: 92%;
+    width: 80%;
+    margin: 0 auto;
   }
   .job {
     overflow: hidden;
@@ -188,7 +189,7 @@ const TextPart = styled(motion.div)`
       color: #ff6363;
     }
     @media screen and (max-width: 640px) {
-      font-size: 80px;
+      font-size: 60px;
       line-height: 5rem;
     }
 
@@ -226,6 +227,7 @@ const Circle = styled(motion.div)`
   overflow: auto;
   @media screen and (max-width: 640px) {
     display: block;
+    
   }
   svg {
     /* visibility: hidden; */
@@ -246,7 +248,7 @@ const ScrollDown = styled(motion.div)`
   align-items: center;
   flex-direction: column;
   position: absolute;
-  bottom:6rem;
+  bottom: 6rem;
   right: 7rem;
   overflow: hidden;
   P {
@@ -262,6 +264,10 @@ const ScrollDown = styled(motion.div)`
   @media screen and (max-width: 640px) {
     display: none;
   }
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
+ 
 `
 
 

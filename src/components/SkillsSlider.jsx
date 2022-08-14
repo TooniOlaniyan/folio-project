@@ -1,4 +1,4 @@
-import React from 'react'
+import React , {useState , useEffect} from 'react'
 import Marquee from 'react-fast-marquee'
 import {FaGitAlt , FaReact , FaHtml5 , FaCss3 , FaNodeJs} from 'react-icons/fa'
 import {
@@ -12,12 +12,18 @@ import styled from 'styled-components'
 import SkillCard from '../shared/SkillCard'
 
 function SkillsSlider() {
+  const size = window.innerWidth.valueOf()
+  const [width, setWidth] = useState(size)
+
+
+  
   return (
+
     <Section>
       <Marquee
         style={{ margin: '0 1rem' }}
         pauseOnHover={true}
-        speed={50}
+        speed={100}
         gradient={false}
       >
         <SkillCard
@@ -79,6 +85,11 @@ const Section = styled.div`
     /* background-color: green; */
     margin-top: 5rem;
     width: 90vw;
+    @media screen and (max-width:640px) {
+      width: 100vw;
+      
+    }
+
     
 `
 
