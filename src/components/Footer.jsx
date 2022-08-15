@@ -7,6 +7,31 @@ import TimeComponent from '../components/TimeComponent'
 import {motion} from 'framer-motion'
 
 function Footer() {
+    const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9] }
+       const parent = {
+         initial: {
+           y: 0,
+         },
+         animate: {
+           y: 0,
+           transition: {
+             staggerChildren: 0.8,
+           },
+         },
+       }
+            const letter = {
+              initial: {
+                y: 40,
+                skewY: 2,
+                opacity: 0,
+              },
+              animate: {
+                y: 0,
+                skewY: 0,
+                opacity: 1,
+                transition: { duration: 1, ...transition },
+              },
+            }
   return (
     <Section>
       {/* <motion.div className='pop'>
@@ -18,27 +43,27 @@ function Footer() {
           Finally some color 🕺
         </motion.p>
       </motion.div> */}
-      <Social>
-        <a href='https://twitter.com' target='_blank'>
+      <Social variants={parent} initial='initial' whileInView='animate'>
+        <motion.a variants={letter}   href='https://twitter.com' target='_blank'>
           Twitter
-        </a>
-        <a href='https://github.com/TooniOlaniyan' target='_blank'>
+        </motion.a>
+        <motion.a variants={letter}  href='https://github.com/TooniOlaniyan' target='_blank'>
           GitHub
-        </a>
-        <a
+        </motion.a>
+        <motion.a variants={letter}
           href='https://www.linkedin.com/in/tooni-olaniyan-a3144222b/'
           target='_blank'
         >
           Linkedin
-        </a>
+        </motion.a>
       </Social>
-      <div className='date'>
+      <motion.div whileInView={{opacity:[0,1]}} viewport={{once:true}} transition={{duration:2 ,ease:'easeInOut'}} className='date'>
         <TimeComponent />
         <p>Designed By : 🙋‍♂️</p>
-      </div>
+      </motion.div>
 
       <div className='otherPart'>
-        <button className='contact'>Contact Me</button>
+        <motion.button variants={letter} initial='initial' whileInView='animate' className='contact'>Contact Me</motion.button>
       </div>
     </Section>
   )
@@ -96,7 +121,7 @@ const Section = styled.div`
     }
   }
 `
-const Social = styled.div`
+const Social = styled(motion.div)`
   display: flex;
   justify-content: center;
   justify-content: center;
