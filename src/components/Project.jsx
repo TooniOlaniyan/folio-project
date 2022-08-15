@@ -246,7 +246,7 @@ const Main = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 20rem;
+  margin-top: 17rem;
   gap: 13rem;
 
 
