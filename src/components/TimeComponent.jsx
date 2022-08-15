@@ -27,8 +27,8 @@ const weekDays = ['Sun', 'Mon', 'Tues', 'Weds', 'Thurs', 'Fri', 'Sat', 'Sun']
     /* background-color: red; */
     width: max-content;
       p {
-        color: #ff6363a8;
-        font-size: 20px;
+        color: white;
+        font-size: 23px;
          @media screen and (max-width: 640px) {
           font-size: 19px;
           width: min-content;

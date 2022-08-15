@@ -1,6 +1,7 @@
 import React from 'react'
 import About from '../components/About'
 import CustomCursor from '../components/CustomCursor'
+import Footer from '../components/Footer'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
 import Project from '../components/Project'
@@ -15,6 +16,7 @@ function Home() {
         <About/>
         <Skills/>
         <Project/>
+        <Footer/>
     </div>
   )
 }

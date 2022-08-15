@@ -33,7 +33,7 @@ function App() {
   )
 }
   const Line = styled.div`
-    .scrollY {
+    /* .scrollY {
       position: fixed;
 
       top: -45rem;
@@ -46,9 +46,9 @@ function App() {
         display: none;
       }
       @media screen and (max-width: 1024px) {
-        /* display: none; */
+      
       }
-    }
+    } */
   `
 
 export default App;

@@ -80,6 +80,8 @@ const Main = styled.div`
     }
     .skillText {
       font-size: 70px;
+      font-weight: 600;
+      text-decoration: line-through;
       margin: 1rem 0;
       /* background-color: red; */
       display: flex;
