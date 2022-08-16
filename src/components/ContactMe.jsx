@@ -4,11 +4,28 @@ import { GrClose } from 'react-icons/gr'
 import {motion} from 'framer-motion'
 
 function ContactMe({display , setDisplay}) {
+
+  const handleChange = (e) => {
+    setFormData((prevState) => ({
+      ...prevState,
+      [e.target.id]: e.target.value 
+    }))
+
+  }
+  const [formData , setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  })
+
+  const {name , email , message} = formData
+
     const handleClick = () => {
         setDisplay(false)
     }
     const handleSubmit = (e) => {
       e.preventDefault()
+
 
     }
    
@@ -21,15 +38,15 @@ function ContactMe({display , setDisplay}) {
       <form onSubmit={handleSubmit} className='form' action=''>
         <div className='userInput'>
           <Label htmlFor=''>Name</Label>
-          <Input type='text' />
+          <Input id='name' onChange={handleChange}  type='text' />
         </div>
         <div className='userInput'>
           <Label htmlFor=''>Email</Label>
-          <Input type='email' />
+          <Input id='name' onChange={handleChange}  type='email' />
         </div>
         <div className='userInput'>
           <Label htmlFor=''>Message</Label>
-          <Textarea maxLength={200} rows='5' name='' id=''></Textarea>
+          <Textarea  onChange={handleChange} maxLength={200} rows='5' name='' id='message'></Textarea>
         </div>
         <Container>
           <p>Get back to you ASAP</p>
