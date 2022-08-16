@@ -117,12 +117,15 @@ const Main = styled.header`
   padding: 2rem 0;
   max-height: 3rem;
   font-size: 18px;
-  .headerName{
-     @media screen and (max-width: 640px) {
+  .headerName {
+    @media screen and (max-width: 640px) {
       width: max-content;
-      
-     }
-    
+    }
+    @media screen and (max-width: 450px) {
+      font-size: 13px;
+      padding: 1rem;
+      width: max-content;
+    }
   }
   @media screen and (max-width: 640px) {
     padding: 0 3rem;
@@ -142,28 +145,23 @@ const Main = styled.header`
     color: #d6e5fa;
     gap: 2rem;
     cursor: pointer;
-    li{
+    li {
       position: relative;
       padding: 0.3rem 0;
-        
     }
-    li::after{
+    li::after {
       content: '';
       position: absolute;
       width: 0;
       height: 2px;
       bottom: 0;
       left: 0;
-      background-color: #ff6363; 
+      background-color: #ff6363;
       transition: all 0.5s ease-out;
-     
     }
-    li:hover::after{
+    li:hover::after {
       width: 100%;
     }
-    
-
-
 
     @media screen and (max-width: 640px) {
       display: none;

@@ -49,7 +49,6 @@ const Main = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* height: 100vh; */
   margin-top: 10rem;
 
   .top {
@@ -95,9 +94,5 @@ const Main = styled.div`
     }
   }
 
-
-  .marqueeContainer{
-    /* width: 100vw; */
-  }
 `
 export default Skills

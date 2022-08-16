@@ -158,6 +158,7 @@ const Section = styled.section`
       flex-direction: column;
       gap: 3rem;
     }
+   
  
 `
 
@@ -175,9 +176,10 @@ const TextPart = styled(motion.div)`
   }
 
   @media screen and (max-width: 640px) {
-    width: 80%;
+    width: 80vw;
     margin: 0 auto;
   }
+ 
   .job {
     overflow: hidden;
     font-size: 120px;
@@ -192,6 +194,11 @@ const TextPart = styled(motion.div)`
       font-size: 60px;
       line-height: 5rem;
     }
+    @media screen and (max-width: 450px) {
+      font-size: 50px;
+      
+    }
+   
 
     span {
       text-decoration: line-through;
@@ -205,6 +212,7 @@ const TextPart = styled(motion.div)`
     @media screen and (max-width: 640px) {
       font-size: 20px;
     }
+   
   }
   .name {
     font-size: 20px;

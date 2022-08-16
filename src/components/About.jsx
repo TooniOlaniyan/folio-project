@@ -141,6 +141,10 @@ const Section = styled.div`
     flex-direction: column;
     margin-top: 6rem;
   }
+  @media screen and (max-width: 1024px) {
+    flex-direction: column;
+    margin-top: 6rem;
+  }
   svg {
     padding: 2rem;
     @media screen and (max-width: 640px) {
@@ -148,9 +152,10 @@ const Section = styled.div`
     
       height: 350px;
       margin: 0 auto;
-      /* border: 2px solid white; */
+    
       
     }
+    
 
     .text {
       font-size: 80px;
@@ -165,6 +170,12 @@ const TextWrapper = styled(motion.div)`
   max-width: 35vw;
   @media screen and (max-width: 640px) {
     max-width: 90vw;
+    margin-top: -4rem;
+    
+  }
+  @media screen and (max-width: 1024px) {
+    
+
     margin-top: -4rem;
     
   }

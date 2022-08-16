@@ -30,8 +30,13 @@ const weekDays = ['Sun', 'Mon', 'Tues', 'Weds', 'Thurs', 'Fri', 'Sat', 'Sun']
         color: white;
         font-size: 15px;
          @media screen and (max-width: 640px) {
-          font-size: 19px;
-          width: min-content;
+          font-size: 18px;
+          width: max-content;
+         }
+         @media screen and (max-width: 450px) {
+          font-size: 13px;
+          padding: 1rem;
+          width: max-content;
          }
       }
     `

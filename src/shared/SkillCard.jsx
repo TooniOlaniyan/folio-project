@@ -48,6 +48,7 @@ const Container = styled.div`
     width: 70vw;
     
   }
+ 
   
 `
 const Image = styled(motion.div)`
@@ -75,6 +76,7 @@ const Text = styled(motion.div)`
     font-family: 'Nunito Sans', sans-serif;
     overflow: hidden;
     transition: all 0.8s ease-in-out;
+   
     &:hover {
       color: #ff6363;
       text-decoration: line-through;
@@ -87,6 +89,7 @@ const Text = styled(motion.div)`
     font-family: 'Nunito Sans', sans-serif;
     overflow: hidden;
     transition: all 0.8s ease-in-out;
+   
     &:hover {
       color: #ff6363;
     }

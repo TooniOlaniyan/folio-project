@@ -41,6 +41,7 @@ function Project() {
     <Main>
       <RecentWorks>
         <motion.div
+          className='star'
           whileInView={{ rotate: [0, 360] }}
           transition={{
             repeat: Infinity,
@@ -48,16 +49,17 @@ function Project() {
             ease: 'linear',
           }}
         >
-          <GiCursedStar fill='#D6E5FA' size={50} />
+          <GiCursedStar fill='#D6E5FA' />
         </motion.div>
         <motion.h1
           whileInView={{ y: [-40, 0], opacity: [0, 1] }}
           viewport={{ once: true }}
           transition={{ duration: 1, ease: [0.43, 0.13, 0.23, 0.96] }}
         >
-          RECENT PROJECTS :
+          RECENT PROJECTS_
         </motion.h1>
         <motion.div
+          className='star'
           animate={{ rotate: [0, 360] }}
           transition={{
             repeat: Infinity,
@@ -65,7 +67,7 @@ function Project() {
             ease: 'linear',
           }}
         >
-          <GiCursedStar fill='#D6E5FA' size={50} />
+          <GiCursedStar fill='#D6E5FA' />
         </motion.div>
       </RecentWorks>
       <Works>
@@ -248,6 +250,14 @@ const Main = styled.div`
   flex-direction: column;
   margin-top: 17rem;
   gap: 13rem;
+  @media screen and (max-width: 640px) {
+    gap: 7rem;
+    margin-top: 10rem;
+  }
+  @media screen and (max-width: 450px) {
+    gap: 4rem;
+    margin-top: 10rem;
+  }
 
 
   
@@ -255,33 +265,67 @@ const Main = styled.div`
 `
 
 const RecentWorks = styled.div`
-display: flex;
-justify-content: space-around;
-gap: 8rem;
-align-items: center;
-h1{
-  font-size: 70px;
-  font-weight: 600;
-  text-decoration: line-through;
-}
-
+  display: flex;
+  justify-content: space-around;
+  gap: 8rem;
+  align-items: center;
   
+  @media screen and (max-width: 640px) {
+    width: 90vw;
+    gap: 2rem;
+    justify-content: center;
+  }
+  @media screen and (max-width: 450px) {
+    width: 90vw;
+    gap: 0.7rem;
+  }
+  
+  h1 {
+    font-size: 70px;
+    font-weight: 600;
+  
+    @media screen and (max-width: 640px) {
+      font-size: 40px;
+      width: max-content;
+      /* background-color: red; */
+    }
+    @media screen and (max-width: 450px) {
+      font-size: 30px;
+      width: max-content;
+      /* background-color: red; */
+    }
+    
+    
+  }
+  .star {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    font-size: 60px;
+    @media screen and (max-width: 640px) {
+     font-size: 30px;
+
+   }
+    @media screen and (max-width: 450px) {
+     display: none;
+
+   }
+
+   
+    
+  }
 `
 const Works = styled.div`
   display: flex;
   justify-content: space-around;
-  
-  
   width: 80vw;
   /* background-color: red; */
-  
-
   align-items: center;
-  .spin{
-    position: absolute;
-    top: 3rem;
-    right: -5rem;
+  @media screen and (max-width: 640px) {
+    flex-direction: column;
   }
+  
+ 
 `
 
 const Text = styled(motion.div)`
@@ -294,12 +338,22 @@ const Text = styled(motion.div)`
   width: 40%;
   /* overflow: hidden; */
   /* background-color: red; */
+  @media screen and (max-width: 640px) {
+    width: 85vw;
+    margin: 0.5rem;
+    align-items: flex-start;
+  }
+ 
 
   h2 {
     font-size: 2rem;
     font-weight: 600;
     overflow: hidden;
     letter-spacing: 2px;
+    @media screen and (max-width: 640px) {
+      font-size: 1.3rem;
+    }
+    
   }
   p {
     overflow: hidden;
@@ -308,6 +362,10 @@ const Text = styled(motion.div)`
     letter-spacing: 2px;
     text-align: right;
     max-width: fit-content;
+    @media screen and (max-width: 640px) {
+      font-size: 0.8rem;
+    }
+   
   }
 `
 const Link = styled.div`
@@ -327,6 +385,10 @@ const Link = styled.div`
     padding: 0.6rem;
     border: 1px solid #ff636341;
     border-radius: 20px;
+    @media screen and (max-width: 640px) {
+      width: 85vw;
+    }
+   
 
     a {
       color: #d6e5fa;
@@ -337,6 +399,11 @@ const Link = styled.div`
     height: 150px;
     overflow: hidden;
     position: relative;
+    @media screen and (max-width: 640px) {
+      width: 85vw;
+      
+    }
+  
 
     img {
       width: 100%;

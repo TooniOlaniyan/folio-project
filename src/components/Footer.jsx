@@ -1,12 +1,18 @@
-import React from 'react'
+import React  , {useState}from 'react'
 import styled from 'styled-components'
 import {RiTwitterFill} from 'react-icons/ri'
 import {VscGithub} from 'react-icons/vsc'
 import {BsInstagram} from 'react-icons/bs'
 import TimeComponent from '../components/TimeComponent'
 import {motion} from 'framer-motion'
+import ContactMe from './ContactMe'
 
 function Footer() {
+  const [display , setDisplay] = useState(false)
+  const handleClick = () => {
+    setDisplay(true)
+
+  }
     const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9] }
        const parent = {
          initial: {
@@ -63,8 +69,9 @@ function Footer() {
       </motion.div>
 
       <div className='otherPart'>
-        <motion.button variants={letter} initial='initial' whileInView='animate' className='contact'>Contact Me</motion.button>
+        <motion.button onClick={handleClick} variants={letter} initial='initial' whileInView='animate' className='contact'>Contact Me</motion.button>
       </div>
+      {display ? <ContactMe display={display} setDisplay={setDisplay}/> : ''}
     </Section>
   )
 }
@@ -79,6 +86,12 @@ const Section = styled.div`
   position: relative;
   overflow: hidden;
   gap: 10rem;
+  @media screen and (max-width: 640px) {
+    gap: 2rem;
+    flex-direction: column;
+    margin-top: 7rem;
+  }
+ 
 
   .pop {
     position: absolute;
@@ -94,6 +107,10 @@ const Section = styled.div`
     align-items: center;
     gap: 3rem;
     letter-spacing: 2px;
+    @media screen and (max-width: 640px) {
+      flex-direction: column;
+      gap: 2rem;
+    }
   }
   .otherPart {
     /* border: 2px solid black; */
@@ -115,6 +132,13 @@ const Section = styled.div`
       color: white;
       font-weight: 700;
       border: none;
+      @media screen and (max-width: 640px) {
+        font-size: 35px;
+      }
+      @media screen and (max-width: 450px) {
+        font-size: 30px;
+        width: max-content;
+      }
       &:hover {
         color: #ff87b2;
       }
@@ -141,6 +165,14 @@ const Social = styled(motion.div)`
     font-weight: 600;
     position: relative;
     overflow: hidden;
+    @media screen and (max-width: 640px) {
+      font-size: 22px;
+    }
+    @media screen and (max-width: 450px) {
+      font-size: 20px;
+      
+    }
+  
     &::before {
       content: '';
       position: absolute;

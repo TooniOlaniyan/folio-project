@@ -12,8 +12,6 @@ import styled from 'styled-components'
 import SkillCard from '../shared/SkillCard'
 
 function SkillsSlider() {
-  const size = window.innerWidth.valueOf()
-  const [width, setWidth] = useState(size)
 
 
   
@@ -85,10 +83,12 @@ const Section = styled.div`
     /* background-color: green; */
     margin-top: 5rem;
     width: 90vw;
+    overflow: hidden;
     @media screen and (max-width:640px) {
-      width: 100vw;
+      width: 90vw;
       
     }
+   
 
     
 `
