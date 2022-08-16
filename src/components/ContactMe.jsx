@@ -94,7 +94,6 @@ const Send = styled.div`
   }
 `
 const Label = styled.label`
-  /* background-color: red; */
   font-family: 'Aboreto', cursive;
   font-size: 17px;
   font-weight: 600;
