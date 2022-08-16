@@ -310,6 +310,9 @@ const RecentWorks = styled.div`
      display: none;
 
    }
+  @media screen and (max-width: 890px) {
+    display: none;
+  }
 
    
     
@@ -322,6 +325,9 @@ const Works = styled.div`
   /* background-color: red; */
   align-items: center;
   @media screen and (max-width: 640px) {
+    flex-direction: column;
+  }
+  @media screen and (max-width: 890px) {
     flex-direction: column;
   }
   
@@ -343,6 +349,12 @@ const Text = styled(motion.div)`
     margin: 0.5rem;
     align-items: flex-start;
   }
+  @media screen and (max-width: 890px) {
+    width: 85vw;
+    align-items: flex-end;
+    margin: 1rem;
+  }
+
  
 
   h2 {
@@ -353,6 +365,7 @@ const Text = styled(motion.div)`
     @media screen and (max-width: 640px) {
       font-size: 1.3rem;
     }
+
     
   }
   p {
@@ -365,6 +378,7 @@ const Text = styled(motion.div)`
     @media screen and (max-width: 640px) {
       font-size: 0.8rem;
     }
+ 
    
   }
 `
@@ -388,6 +402,9 @@ const Link = styled.div`
     @media screen and (max-width: 640px) {
       width: 85vw;
     }
+  @media screen and (max-width: 890px) {
+    width: 85vw;
+  }
    
 
     a {
@@ -403,6 +420,10 @@ const Link = styled.div`
       width: 85vw;
       
     }
+  @media screen and (max-width: 890px) {
+    width: 85vw;
+  }
+  
   
 
     img {

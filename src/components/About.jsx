@@ -173,7 +173,8 @@ const TextWrapper = styled(motion.div)`
     margin-top: -4rem;
     
   }
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 890px) {
+    max-width: 90vw;
     
 
     margin-top: -4rem;

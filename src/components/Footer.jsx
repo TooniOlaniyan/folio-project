@@ -39,8 +39,9 @@ function Footer() {
               },
             }
   return (
-    <Section>
-      {/* <motion.div className='pop'>
+    <>
+      <Section>
+        {/* <motion.div className='pop'>
         <motion.p
           whileInView={{ y: [-60, 0, -60] }}
           transition={{ duration: 5, ease: 'easeOut' }}
@@ -49,30 +50,53 @@ function Footer() {
           Finally some color 🕺
         </motion.p>
       </motion.div> */}
-      <Social variants={parent} initial='initial' whileInView='animate'>
-        <motion.a variants={letter}   href='https://twitter.com' target='_blank'>
-          Twitter
-        </motion.a>
-        <motion.a variants={letter}  href='https://github.com/TooniOlaniyan' target='_blank'>
-          GitHub
-        </motion.a>
-        <motion.a variants={letter}
-          href='https://www.linkedin.com/in/tooni-olaniyan-a3144222b/'
-          target='_blank'
+        <Social variants={parent} initial='initial' whileInView='animate'>
+          <motion.a
+            variants={letter}
+            href='https://twitter.com'
+            target='_blank'
+          >
+            Twitter
+          </motion.a>
+          <motion.a
+            variants={letter}
+            href='https://github.com/TooniOlaniyan'
+            target='_blank'
+          >
+            GitHub
+          </motion.a>
+          <motion.a
+            variants={letter}
+            href='https://www.linkedin.com/in/tooni-olaniyan-a3144222b/'
+            target='_blank'
+          >
+            Linkedin
+          </motion.a>
+        </Social>
+        <motion.div
+          whileInView={{ opacity: [0, 1] }}
+          viewport={{ once: true }}
+          transition={{ duration: 2, ease: 'easeInOut' }}
+          className='date'
         >
-          Linkedin
-        </motion.a>
-      </Social>
-      <motion.div whileInView={{opacity:[0,1]}} viewport={{once:true}} transition={{duration:2 ,ease:'easeInOut'}} className='date'>
-        <TimeComponent />
-        <p>Designed By : 🙋‍♂️</p>
-      </motion.div>
+          <TimeComponent />
+          <p>Designed By : 🙋‍♂️</p>
+        </motion.div>
 
-      <div className='otherPart'>
-        <motion.button onClick={handleClick} variants={letter} initial='initial' whileInView='animate' className='contact'>Contact Me</motion.button>
-      </div>
-      {display ? <ContactMe display={display} setDisplay={setDisplay}/> : ''}
-    </Section>
+        <div className='otherPart'>
+          <motion.button
+            onClick={handleClick}
+            variants={letter}
+            initial='initial'
+            whileInView='animate'
+            className='contact'
+          >
+            Contact Me
+          </motion.button>
+        </div>
+      </Section>
+        {display ? <ContactMe display={display} setDisplay={setDisplay} /> : ''}
+    </>
   )
 }
 
@@ -87,6 +111,11 @@ const Section = styled.div`
   overflow: hidden;
   gap: 10rem;
   @media screen and (max-width: 640px) {
+    gap: 2rem;
+    flex-direction: column;
+    margin-top: 7rem;
+  }
+  @media screen and (max-width: 890px) {
     gap: 2rem;
     flex-direction: column;
     margin-top: 7rem;

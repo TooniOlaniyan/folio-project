@@ -48,6 +48,10 @@ const Container = styled.div`
     width: 70vw;
     
   }
+  @media screen and (max-width:890px) {
+    width: 70vw;
+    
+  }
  
   
 `
