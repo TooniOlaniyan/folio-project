@@ -78,7 +78,7 @@ const Send = styled.div`
   border-radius: 5px;
   position: fixed;
   z-index: 999;
-  bottom: 0;
+  bottom: 0.5rem;
   right: 0;
   @media screen and (max-width: 600px) {
     width: 100vw;
@@ -87,7 +87,7 @@ const Send = styled.div`
   .form {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
     @media screen and (max-width: 600px) {
       width: 100vw;
       padding: 0 2rem;
