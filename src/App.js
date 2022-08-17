@@ -6,6 +6,8 @@ import {original , invert } from './components/ThemeStyle'
 import Home from './pages/Home'
 import React , {useState} from 'react'
 import styled from 'styled-components'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 
 export const ThemeContext = React.createContext()
@@ -15,11 +17,10 @@ const themes = {
 }
 function App() {
   const { scrollYProgress  , scrollY} = useScroll()
-  console.log(scrollYProgress)
-  // const [isVisible , setIsVisible] = useState(scrollY)
   const [theme, setTheme] = useState('original')
   return (
     <>
+    <ToastContainer/>
     <Line>
       <motion.div style={{scaleY: scrollYProgress}}  className='scrollY'></motion.div>
     </Line>

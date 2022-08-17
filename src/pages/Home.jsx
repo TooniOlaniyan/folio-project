@@ -6,6 +6,8 @@ import Header from '../components/Header'
 import Hero from '../components/Hero'
 import Project from '../components/Project'
 import Skills from '../components/Skills'
+import LocomotiveScroll from 'locomotive-scroll'
+
 
 function Home() {
   return (
@@ -13,7 +15,7 @@ function Home() {
       <CustomCursor/>
         <Header />
         <Hero />
-        <About/>
+        <About  />
         <Skills/>
         <Project/>
         <Footer/>

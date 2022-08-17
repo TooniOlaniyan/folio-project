@@ -39,7 +39,7 @@ const letter = {
   },
 }
   return (
-    <Section>
+    <Section id='about'>
       <div id='SVG'>
         <svg
           width='600px'

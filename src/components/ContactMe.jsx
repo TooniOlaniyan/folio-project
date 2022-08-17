@@ -1,30 +1,39 @@
-import React, { useState } from 'react'
+import React, { useState , useRef } from 'react'
 import styled from 'styled-components'
 import { GrClose } from 'react-icons/gr'
 import {motion} from 'framer-motion'
+import {toast} from 'react-toastify'
+import emailjs from '@emailjs/browser'
+
+
 
 function ContactMe({display , setDisplay}) {
-
-  const handleChange = (e) => {
-    setFormData((prevState) => ({
-      ...prevState,
-      [e.target.id]: e.target.value 
-    }))
-
-  }
-  const [formData , setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  })
-
-  const {name , email , message} = formData
-
+  const form = useRef(null)
     const handleClick = () => {
         setDisplay(false)
     }
-    const handleSubmit = (e) => {
+
+    const handleSubmit = async (e) => {
       e.preventDefault()
+      const user = form.current.user_name.value
+      try {
+       const response= await emailjs.sendForm(
+          'service_ekels7q',
+          'template_i18zn37',
+          form.current,
+          'ZaKHhYjCOKrElh5-x'
+        )
+        if(response.text === 'OK'){
+          form.current.reset()
+          toast.success(`Get back to you ASAP ${user}`)
+
+        }
+        
+      } catch (error) {
+        toast.error(`Opps something went wrong ${user}`)
+        
+      }
+   
 
 
     }
@@ -35,18 +44,18 @@ function ContactMe({display , setDisplay}) {
         <GrClose size={30} onClick={handleClick} />
       </motion.div>
 
-      <form onSubmit={handleSubmit} className='form' action=''>
+      <form onSubmit={handleSubmit} ref={form} className='form' action=''>
         <div className='userInput'>
           <Label htmlFor=''>Name</Label>
-          <Input id='name' onChange={handleChange}  type='text' />
+          <Input name='user_name'   type='text' />
         </div>
         <div className='userInput'>
           <Label htmlFor=''>Email</Label>
-          <Input id='name' onChange={handleChange}  type='email' />
+          <Input name='user_email'  type='email' />
         </div>
         <div className='userInput'>
           <Label htmlFor=''>Message</Label>
-          <Textarea  onChange={handleChange} maxLength={200} rows='5' name='' id='message'></Textarea>
+          <Textarea  maxLength={200} rows='5' name='message' ></Textarea>
         </div>
         <Container>
           <p>Get back to you ASAP</p>
@@ -108,10 +117,12 @@ const Input = styled.input`
   @media screen and (max-width: 600px) {
   font-size: 15px;
   width: 340px;
+  
   }
 
   &:focus {
     outline: none;
+    box-shadow: none!important;
   }
 `
 const Textarea = styled.textarea`
