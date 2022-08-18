@@ -1,6 +1,5 @@
 import React,  {useEffect} from 'react'
 import styled from 'styled-components'
-import { GiSpiderWeb, GiLobArrow } from 'react-icons/gi'
 import { FaArrowDown } from 'react-icons/fa'
 import {motion} from 'framer-motion'
 
@@ -152,7 +151,6 @@ function Hero() {
 }
 
 const Section = styled.section`
-  /* width: 100vw; */
   display: flex;
   justify-content: center;
   align-items: center;

@@ -7,8 +7,7 @@ import Hero from '../components/Hero'
 import Project from '../components/Project'
 import Skills from '../components/Skills'
 import Loader from '../components/Loader'
-import {motion} from 'framer-motion'
-import ContactMe from '../components/ContactMe'
+
 
 
 

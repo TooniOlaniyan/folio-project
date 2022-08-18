@@ -58,7 +58,7 @@ function App() {
       position: fixed;
       
       top: -45rem;
-      left: 2rem;
+      right: 2rem;
       bottom: 0;
       width: 0.1px;
       background: #fff;

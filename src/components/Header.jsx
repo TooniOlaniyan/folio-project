@@ -1,7 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import {Link} from 'react-router-dom'
-import { Spiral as Hamburger } from 'hamburger-react'
 import {motion} from 'framer-motion'
 import TimeComponent from './TimeComponent'
 import { useLocomotiveScroll } from 'react-locomotive-scroll'

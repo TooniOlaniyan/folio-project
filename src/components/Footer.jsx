@@ -1,8 +1,5 @@
 import React  , {useState}from 'react'
 import styled from 'styled-components'
-import {RiTwitterFill} from 'react-icons/ri'
-import {VscGithub} from 'react-icons/vsc'
-import {BsInstagram} from 'react-icons/bs'
 import { useLocomotiveScroll } from 'react-locomotive-scroll'
 import TimeComponent from '../components/TimeComponent'
 import {motion} from 'framer-motion'
