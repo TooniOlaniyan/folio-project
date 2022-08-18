@@ -4,13 +4,18 @@ import { GrClose } from 'react-icons/gr'
 import {motion} from 'framer-motion'
 import {toast} from 'react-toastify'
 import emailjs from '@emailjs/browser'
+import { useLocomotiveScroll } from 'react-locomotive-scroll'
 
 
 
 function ContactMe({display , setDisplay}) {
   const form = useRef(null)
+  const { scroll } = useLocomotiveScroll()
     const handleClick = () => {
         setDisplay(false)
+        document.body.style.overflow = 'visible'
+        scroll.start()
+        
     }
 
     const handleSubmit = async (e) => {
@@ -31,6 +36,9 @@ function ContactMe({display , setDisplay}) {
         
       } catch (error) {
         toast.error(`Opps something went wrong ${user}`)
+        setTimeout(() => {
+          form.current.reset()
+        } , 1500)
         
       }
    
@@ -39,23 +47,27 @@ function ContactMe({display , setDisplay}) {
     }
    
   return (
-    <Send>
-      <motion.div whileHover={{rotate:90}} transition={{duration:0.2}} className='close'>
+    <Send data-scroll-sticky>
+      <motion.div
+        whileHover={{ rotate: 90 }}
+        transition={{ duration: 0.2 }}
+        className='close'
+      >
         <GrClose size={30} onClick={handleClick} />
       </motion.div>
 
       <form onSubmit={handleSubmit} ref={form} className='form' action=''>
         <div className='userInput'>
           <Label htmlFor=''>Name</Label>
-          <Input name='user_name'   type='text' />
+          <Input name='user_name' type='text' />
         </div>
         <div className='userInput'>
           <Label htmlFor=''>Email</Label>
-          <Input name='user_email'  type='email' />
+          <Input name='user_email' type='email' />
         </div>
         <div className='userInput'>
           <Label htmlFor=''>Message</Label>
-          <Textarea  maxLength={200} rows='5' name='message' ></Textarea>
+          <Textarea maxLength={200} rows='5' name='message'></Textarea>
         </div>
         <Container>
           <p>Get back to you ASAP</p>
@@ -75,22 +87,29 @@ const Send = styled.div`
   width: 500px;
   height: 500px;
   background-color: #f7ecde;
+  top: 15rem;
+  right: 1rem;
   border-radius: 5px;
   position: fixed;
   z-index: 999;
-  bottom: 0.5rem;
-  right: 0;
   @media screen and (max-width: 600px) {
     width: 100vw;
     height: 100vh;
+    top: 0;
+    right: 0;
   }
+  /* @media screen and (max-width: 890px) {
+    top: 42rem;
+    right: 0.5rem;
+  } */
   .form {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.6rem;
     @media screen and (max-width: 600px) {
       width: 100vw;
       padding: 0 2rem;
+      gap: 3rem;
     }
 
     .userInput {
@@ -112,7 +131,7 @@ const Input = styled.input`
   font-size: 18px;
   border: none;
   border-bottom: 1.5px solid black;
-  background-color: #f7ecde;
+  background-color: transparent;
   font-family: 'Aboreto', cursive;
   @media screen and (max-width: 600px) {
   font-size: 15px;
@@ -128,7 +147,7 @@ const Input = styled.input`
 const Textarea = styled.textarea`
   width: 450px;
   border: none;
-  background-color: #f7ecde;
+  background-color: transparent;
   font-size: 18px;
   border-bottom: 1.5px solid black;
   font-family: 'Aboreto', cursive;
@@ -137,7 +156,7 @@ const Textarea = styled.textarea`
     width:340px;
   }
   &:focus {
-    outline: none;
+    outline: none !important;
   }
 `
 const Container = styled.div`

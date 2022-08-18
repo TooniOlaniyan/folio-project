@@ -3,14 +3,20 @@ import styled from 'styled-components'
 import {RiTwitterFill} from 'react-icons/ri'
 import {VscGithub} from 'react-icons/vsc'
 import {BsInstagram} from 'react-icons/bs'
+import { useLocomotiveScroll } from 'react-locomotive-scroll'
 import TimeComponent from '../components/TimeComponent'
 import {motion} from 'framer-motion'
 import ContactMe from './ContactMe'
+import '../App.css'
 
 function Footer() {
   const [display , setDisplay] = useState(false)
+  const { scroll } = useLocomotiveScroll()
   const handleClick = () => {
     setDisplay(true)
+    scroll.stop()
+    document.body.style.overflow = 'hidden'
+    
 
   }
     const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9] }
@@ -40,16 +46,7 @@ function Footer() {
             }
   return (
     <>
-      <Section>
-        {/* <motion.div className='pop'>
-        <motion.p
-          whileInView={{ y: [-60, 0, -60] }}
-          transition={{ duration: 5, ease: 'easeOut' }}
-          viewport={{ once: true, amount: 1 }}
-        >
-          Finally some color 🕺
-        </motion.p>
-      </motion.div> */}
+      <Section data-scroll-section id='footer'>
         <Social variants={parent} initial='initial' whileInView='animate'>
           <motion.a
             variants={letter}
@@ -95,7 +92,7 @@ function Footer() {
           </motion.button>
         </div>
       </Section>
-        {display ? <ContactMe display={display} setDisplay={setDisplay} /> : ''}
+        {display ? <ContactMe display={display} setDisplay={setDisplay} /> : null}
     </>
   )
 }

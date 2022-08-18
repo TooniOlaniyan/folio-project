@@ -6,38 +6,37 @@ import Header from '../components/Header'
 import Hero from '../components/Hero'
 import Project from '../components/Project'
 import Skills from '../components/Skills'
-import LocomotiveScroll from 'locomotive-scroll'
 import Loader from '../components/Loader'
 import {motion} from 'framer-motion'
+import ContactMe from '../components/ContactMe'
+
 
 
 function Home() {
-  const [loading , setLoading] = useState(false)
+  const [loading , setLoading] = useState(true)
   useEffect(()=>{
     setTimeout(() => {
-      setLoading(true)
-    } , 4800)
-  })
-  if(!loading){
-    return(
-      <Loader/>
+      setLoading(false)
+    } , 5700)
+  } , [loading])
+  
 
-    )
-  }
 
   return (
-    <div>
+    <>
+    
+    {loading ? <Loader/> : (<div>
       <CustomCursor />
-      <div>
+      <div >
         <Header />
         <Hero />
         <About />
         <Skills />
         <Project />
-        <Footer />
+        <Footer  />
       </div>
-    </div>
-  )
-}
+    </div>)}
+</>
+  )}
 
 export default Home

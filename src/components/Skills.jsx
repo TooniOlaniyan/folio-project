@@ -11,18 +11,21 @@ function Skills() {
   
 
   return (
-    <Main>
-      <div className='top'>
+    <Main data-scroll-section  id='skills'>
+      <div
+        data-scroll 
+        data-scroll-speed='4'
+        data-scroll-direction='horzontal'
+        className='top'
+      >
         <motion.div
           initial={{ opacity: 0, width: 0, scaleX: 0 }}
           whileInView={{ opacity: 1, width: '80vw', scaleX: '100%' }}
           transition={{ duration: 1, ease: 'easeInOut' }}
-          viewport={{ once: true , amount:1 }}
+          viewport={{ once: true, amount: 1 }}
           className='line'
         ></motion.div>
-        <motion.div 
-        
-        className='skillText'>
+        <motion.div className='skillText'>
           <p>My skills </p>
 
           <CgArrowBottomRightR color='#d6e5fa' />
@@ -31,7 +34,7 @@ function Skills() {
           initial={{ opacity: 0, width: 0, scaleX: 0 }}
           whileInView={{ opacity: 1, width: '80vw', scaleX: '100%' }}
           transition={{ duration: 1, ease: 'easeInOut' }}
-          viewport={{ once: true  , amount:1}}
+          viewport={{ once: true, amount: 1 }}
           className='lineReverse'
         ></motion.div>
       </div>
@@ -80,7 +83,6 @@ const Main = styled.div`
     .skillText {
       font-size: 70px;
       font-weight: 600;
-      text-decoration: line-through;
       margin: 1rem 0;
       /* background-color: red; */
       display: flex;

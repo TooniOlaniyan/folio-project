@@ -38,19 +38,8 @@ function Project() {
        },
      }
   return (
-    <Main>
+    <Main data-scroll-section id='project' >
       <RecentWorks>
-        <motion.div
-          className='star'
-          whileInView={{ rotate: [0, 360] }}
-          transition={{
-            repeat: Infinity,
-            duration: 1,
-            ease: 'linear',
-          }}
-        >
-          <GiCursedStar fill='#D6E5FA' />
-        </motion.div>
         <motion.h1
           whileInView={{ y: [-40, 0], opacity: [0, 1] }}
           viewport={{ once: true }}
@@ -58,19 +47,12 @@ function Project() {
         >
           RECENT PROJECTS_
         </motion.h1>
-        <motion.div
-          className='star'
-          animate={{ rotate: [0, 360] }}
-          transition={{
-            repeat: Infinity,
-            duration: 1,
-            ease: 'linear',
-          }}
-        >
-          <GiCursedStar fill='#D6E5FA' />
-        </motion.div>
       </RecentWorks>
-      <Works>
+      <Works
+        data-scroll
+        data-scroll-speed='2'
+        data-scroll-direction='horizontal'
+      >
         <Text
           variants={parent}
           initial='initial'
@@ -119,7 +101,11 @@ function Project() {
           </div>
         </Link>
       </Works>
-      <Works>
+      <Works
+        data-scroll
+        data-scroll-speed='-2'
+        data-scroll-direction='horizontal'
+      >
         <Link>
           <motion.div
             whileHover={{ scale: 0.96 }}
@@ -159,7 +145,7 @@ function Project() {
           </motion.p>
         </Text>
       </Works>
-      <Works>
+      <Works data-scroll data-scroll-speed='2' data-scroll-direction='vertical'>
         <Text
           variants={parent}
           initial='initial'
@@ -199,7 +185,11 @@ function Project() {
           </div>
         </Link>
       </Works>
-      <Works>
+      <Works
+        data-scroll
+        data-scroll-speed='3'
+        data-scroll-direction='horizontal'
+      >
         <Link>
           <motion.div
             whileHover={{ scale: 0.96 }}

@@ -34,7 +34,7 @@ function Loader() {
     <Container>
       <motion.div
         animate={{ scale: 60 }}
-        transition={{ delay: 4, duration: 2, ease: [0.6, 0.01, -0.05, 0.9] }}
+        transition={{ delay: 5, duration: 2, ease: [0.6, 0.01, -0.05, 0.9] }}
         className='Name'
       >
         <motion.span animate={{ y: [-70, 0] }}>T</motion.span>

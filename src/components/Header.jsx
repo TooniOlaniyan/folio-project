@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 import { Spiral as Hamburger } from 'hamburger-react'
 import {motion} from 'framer-motion'
 import TimeComponent from './TimeComponent'
+import { useLocomotiveScroll } from 'react-locomotive-scroll'
 
 function Header() {
   const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9] }
@@ -30,8 +31,20 @@ function Header() {
       transition: { duration: 1, ...transition },
     },
   }
+
+  const {scroll} = useLocomotiveScroll()
+  const handleScroll = (id) => {
+    let elem = document.querySelector(id)
+    scroll.scrollTo(elem , {
+      offset: '-200',
+      duration: '1000',
+      easing: [0.25,0.0,0.35,1.0]
+    })
+  }
+
+
   return (
-    <Main>
+    <Main data-scroll-section>
       <div>
         <motion.p
           initial={{ y: -50, opacity: 0 }}
@@ -45,7 +58,9 @@ function Header() {
           Tooni Olaniyan
         </motion.p>
       </div>
-      <div className='nav-container'>
+      <div
+        className='nav-container'
+      >
         <motion.ul variants={menu} initial='initial' animate='animate'>
           <motion.li
             whileHover={{
@@ -56,6 +71,7 @@ function Header() {
             variants={letter}
             initial='initial'
             animate='animate'
+            onClick={() => handleScroll('#about')}
           >
             About
           </motion.li>
@@ -68,6 +84,7 @@ function Header() {
             variants={letter}
             initial='initial'
             animate='animate'
+            onClick={() => handleScroll('#skills')}
           >
             Skills
           </motion.li>
@@ -80,6 +97,7 @@ function Header() {
             variants={letter}
             initial='initial'
             animate='animate'
+            onClick={() => handleScroll('#project')}
           >
             Projects
           </motion.li>
@@ -92,6 +110,7 @@ function Header() {
             variants={letter}
             initial='initial'
             animate='animate'
+            onClick={() => handleScroll('#footer')}
           >
             Contact Me
           </motion.li>
@@ -103,7 +122,7 @@ function Header() {
         animate='animate'
         className='hamburger'
       >
-        <TimeComponent/>
+        <TimeComponent />
       </motion.div>
     </Main>
   )

@@ -50,7 +50,7 @@ const letter = {
 function Hero() {
  
   return (
-    <Section>
+    <Section data-scroll-section>
       <TextPart variants={textParent} initial='initial' animate='animate'>
         <motion.p
           initial={{ opacity: 0, y: 50 }}
@@ -58,21 +58,27 @@ function Hero() {
           transition={{ ...transition }}
           className='name'
         >
-          Hi, i'm <strong>Tooni</strong>
+          Hi, I'm <strong>Tooni</strong>
         </motion.p>
         <motion.p
           variants={letter}
           initial='initial'
           animate='animate'
           className='job'
+          data-scroll
+          data-scroll-direction='horizontal'
+          data-scroll-speed='-2'
         >
-          A front-end <br /> web <span>developer</span>
+          A front-end web <span>developer</span>
         </motion.p>
         <motion.p
           variants={lastText}
           initial='initial'
           animate='animate'
           className='brief'
+          data-scroll
+          data-scroll-direction='horizontal'
+          data-scroll-speed='2'
         >
           I create front facing interface with great asthetic and top-tier user
           experience.
@@ -132,7 +138,7 @@ function Hero() {
             type: 'spring',
           }}
         >
-          <FaArrowDown fill='#D6E5FA'  className='arrowDown' />
+          <FaArrowDown fill='#D6E5FA' className='arrowDown' />
         </motion.div>
         <motion.p
           animate={{ y: [3, 0], opacity: [0, 1] }}
@@ -163,7 +169,7 @@ const Section = styled.section`
 `
 
 const TextPart = styled(motion.div)`
-  overflow: hidden;
+  /* overflow: hidden; */
   width: 50%;
   height: 100%;
   display: flex;
@@ -176,7 +182,7 @@ const TextPart = styled(motion.div)`
   }
 
   @media screen and (max-width: 640px) {
-    width: 80vw;
+    width: 90vw;
     margin: 0 auto;
   }
  
@@ -191,17 +197,24 @@ const TextPart = styled(motion.div)`
       color: #ff6363;
     }
     @media screen and (max-width: 640px) {
-      font-size: 60px;
+      font-size: 50px;
       line-height: 5rem;
+      
     }
     @media screen and (max-width: 450px) {
       font-size: 50px;
       
     }
+     @media screen and (max-width:890px) {
+      font-size: 90px;
+     }
    
 
     span {
       text-decoration: line-through;
+      @media screen and (max-width: 640px) {
+        font-size: 80px;
+      }
     }
   }
 
@@ -256,7 +269,7 @@ const ScrollDown = styled(motion.div)`
   align-items: center;
   flex-direction: column;
   position: absolute;
-  bottom: 6rem;
+  bottom: 0;
   right: 7rem;
   overflow: hidden;
   P {

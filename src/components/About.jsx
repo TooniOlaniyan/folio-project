@@ -39,7 +39,7 @@ const letter = {
   },
 }
   return (
-    <Section id='about'>
+    <Section data-scroll-section id='about'>
       <div id='SVG'>
         <svg
           width='600px'
@@ -90,7 +90,12 @@ const letter = {
           </g>
         </svg>
       </div>
-      <TextWrapper>
+      <TextWrapper
+        data-scroll
+        data-scroll-offset='15%'
+        data-scroll-speed='2'
+        data-scroll-direction = 'horizontal'
+      >
         <motion.span
           className='span'
           variants={firstName}
@@ -122,7 +127,6 @@ const letter = {
             and how they can be implemented. I love minimal designs with
             seamless user experience.
           </motion.span>
-         
         </motion.span>
       </TextWrapper>
     </Section>

@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
-/* @import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Chivo:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap');
 
 
 body{
     font-family: 'Inconsolata', monospace;
+    /* font-family: 'Syncopate', sans-serif; */
     /* font-family: 'Aboreto', cursive; */
     /* font-family: 'Frank Ruhl Libre', serif; */
     /* font-family: 'Chivo', sans-serif; */
