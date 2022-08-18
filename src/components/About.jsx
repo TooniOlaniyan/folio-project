@@ -108,12 +108,12 @@ const letter = {
             based in Nigeria.
           </motion.span>
           <motion.span variants={letter}>
-            In the <span className='stroke'>Winter</span> Hammertan of 2022, i
+            In the <span className='stroke'>Winter</span> Hammertan of 2022, I
             picked up programming &nbsp;
           </motion.span>
 
           <motion.span variants={letter}>
-            from where i left it,and i've been writing code ever since.
+            from where I left it,and I've been writing code ever since.
           </motion.span>
           <motion.span variants={letter}>
             I have an Insatiable curiosity in imagining and bringing ideas
