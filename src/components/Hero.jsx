@@ -195,7 +195,7 @@ const TextPart = styled(motion.div)`
       color: #ff6363;
     }
     @media screen and (max-width: 640px) {
-      font-size: 50px;
+      font-size: 47px;
       line-height: 5rem;
       
     }
