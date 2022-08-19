@@ -26,7 +26,6 @@ a{
     border-radius: 10px;
     cursor: -webkit-grab;
     cursor: grab;
-    opacity: 1;
 }
 
 ::-webkit-scrollbar:hover{
