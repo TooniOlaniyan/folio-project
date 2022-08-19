@@ -19,3 +19,16 @@ body{
 a{
     text-decoration: none;
 }
+
+::-webkit-scrollbar-thumb{
+    width: 7px;
+    background-color: #f05454;
+    border-radius: 10px;
+    cursor: -webkit-grab;
+    cursor: grab;
+    opacity: 1;
+}
+
+::-webkit-scrollbar:hover{
+    transform: scaleX(1);
+}
