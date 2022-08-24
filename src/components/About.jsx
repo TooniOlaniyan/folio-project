@@ -94,7 +94,7 @@ const letter = {
         data-scroll
         data-scroll-offset='15%'
         data-scroll-speed='2'
-        data-scroll-direction = 'horizontal'
+        data-scroll-direction='horizontal'
       >
         <motion.span
           className='span'
@@ -104,16 +104,18 @@ const letter = {
           viewport={{ once: true }}
         >
           <motion.span variants={letter}>
-            I am a <span className='stroke'>developer</span> Front-End engineer
+            I am an <span className='stroke'>Engineer</span> Front-End Developer
             based in Nigeria.
           </motion.span>
           <motion.span variants={letter}>
-            In the <span className='stroke'>Winter</span> Hammertan of 2022, I
-            picked up programming &nbsp;
+            I am highly motivated and
+            progress-focused driven.
           </motion.span>
 
           <motion.span variants={letter}>
-            from where I left it,and I've been writing code ever since.
+            I am dependable and creative with a strong work ethic and an
+            artistic eye, but also bring a fun-loving and enthusiastic attitude
+            &nbsp;
           </motion.span>
           <motion.span variants={letter}>
             I have an Insatiable curiosity in imagining and bringing ideas
