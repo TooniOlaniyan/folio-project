@@ -4,6 +4,7 @@ import project1 from '../assets/project1.png'
 import project2 from '../assets/project2.png'
 import project3 from '../assets/project3.png'
 import project4 from '../assets/project4.png'
+import project6 from '../assets/project6.png'
 import {BsGithub} from 'react-icons/bs'
 import { GiCursedStar } from 'react-icons/gi'
 import {IoArrowRedoOutline} from 'react-icons/io5'
@@ -38,7 +39,7 @@ function Project() {
        },
      }
   return (
-    <Main data-scroll-section id='project' >
+    <Main data-scroll-section id='project'>
       <RecentWorks>
         <motion.h1
           whileInView={{ y: [-40, 0], opacity: [0, 1] }}
@@ -226,6 +227,52 @@ function Project() {
           <motion.h2 variants={letter}>A House sale App</motion.h2>
           <motion.p variants={letter}>
             An app to Sell and List houses <br /> built with Reactjs
+          </motion.p>
+        </Text>
+      </Works>
+      <Works
+        data-scroll
+        data-scroll-speed='-3'
+        data-scroll-direction='horizontal'
+      >
+        <Link>
+          <motion.div
+            whileHover={{ scale: 0.96 }}
+            transition={{ duration: 0.8 }}
+            className='image'
+          >
+            <img loading='lazy' src={project6} alt='' />
+          </motion.div>
+          <div className='links'>
+            <motion.a
+              whileHover={{ scale: 1.2 }}
+              transition={{ duration: 0.3, ease: [0.6, 0.01, -0.05, 0.9] }}
+              target='_blank'
+              rel='noreferrer'
+              href='https://github.com/TooniOlaniyan/cardtonic-user-dashboard-clone'
+            >
+              <BsGithub size={30} />
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.2 }}
+              transition={{ duration: 0.3, ease: [0.6, 0.01, -0.05, 0.9] }}
+              target='_blank'
+              rel='noreferrer'
+              href='https://cardtonic-user-dashboard-clone.vercel.app/'
+            >
+              <IoArrowRedoOutline size={30} />
+            </motion.a>
+          </div>
+        </Link>
+        <Text
+          variants={parent}
+          initial='initial'
+          whileInView='animate'
+          viewport={{ once: true }}
+        >
+          <motion.h2 variants={letter}>A UserDashbord</motion.h2>
+          <motion.p variants={letter}>
+            This is a clone of cardtonic.com User dashboard <br /> built with Reactjs
           </motion.p>
         </Text>
       </Works>
