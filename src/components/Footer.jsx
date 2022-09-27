@@ -47,6 +47,8 @@ function Footer() {
         <Social variants={parent} initial='initial' whileInView='animate'>
           <motion.a
             variants={letter}
+            whileInView='animate'
+            viewport={{once:true}}
             href='https://twitter.com'
             target='_blank'
           >
