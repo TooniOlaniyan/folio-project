@@ -70,7 +70,7 @@ function ContactMe({display , setDisplay}) {
           <Textarea maxLength={200} rows='5' name='message'></Textarea>
         </div>
         <Container>
-          <p>Get back to you ASAP</p>
+          <p>Get back to you soon</p>
           <button>SEND</button>
         </Container>
       </form>
