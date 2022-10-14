@@ -108,8 +108,7 @@ const letter = {
             based in Nigeria.
           </motion.span>
           <motion.span variants={letter}>
-            I am highly motivated and
-            progress-focused driven.
+            I am highly motivated and focused driven.
           </motion.span>
 
           <motion.span variants={letter}>
