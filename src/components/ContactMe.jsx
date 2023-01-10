@@ -1,6 +1,7 @@
-import React, {useRef } from 'react'
+import React, {useRef, useState } from 'react'
 import styled from 'styled-components'
 import { GrClose } from 'react-icons/gr'
+import { PuffLoader } from 'react-spinners'
 import {motion} from 'framer-motion'
 import {toast} from 'react-toastify'
 import emailjs from '@emailjs/browser'
@@ -10,6 +11,7 @@ import { useLocomotiveScroll } from 'react-locomotive-scroll'
 
 function ContactMe({display , setDisplay}) {
   const form = useRef(null)
+  const [loading , setIsLoading] = useState(false)
   const { scroll } = useLocomotiveScroll()
     const handleClick = () => {
         setDisplay(false)
@@ -21,6 +23,7 @@ function ContactMe({display , setDisplay}) {
     const handleSubmit = async (e) => {
       e.preventDefault()
       const user = form.current.user_name.value
+      setIsLoading(true)
       try {
        const response= await emailjs.sendForm(
           'service_ekels7q',
@@ -31,11 +34,13 @@ function ContactMe({display , setDisplay}) {
         if(response.text === 'OK'){
           form.current.reset()
           toast.success(`Get back to you ASAP ${user}`)
+          setIsLoading(false)
 
         }
         
       } catch (error) {
         toast.error(`Opps something went wrong ${user}`)
+        setIsLoading(false)
         setTimeout(() => {
           form.current.reset()
         } , 1500)
@@ -59,19 +64,19 @@ function ContactMe({display , setDisplay}) {
       <form onSubmit={handleSubmit} ref={form} className='form' action=''>
         <div className='userInput'>
           <Label htmlFor=''>Name</Label>
-          <Input name='user_name' type='text' />
+          <Input required name='user_name' type='text' />
         </div>
         <div className='userInput'>
           <Label htmlFor=''>Email</Label>
-          <Input name='user_email' type='email' />
+          <Input required name='user_email' type='email' />
         </div>
         <div className='userInput'>
           <Label htmlFor=''>Message</Label>
-          <Textarea maxLength={200} rows='5' name='message'></Textarea>
+          <Textarea required maxLength={200} rows='5' name='message'></Textarea>
         </div>
         <Container>
           <p>Get back to you soon</p>
-          <button>SEND</button>
+          <button>SEND  {loading && <PuffLoader size={45} color='#fff'/>}</button>
         </Container>
       </form>
     </Send>
@@ -174,17 +179,24 @@ const Container = styled.div`
     font-weight: 600;
   }
   button {
-    padding: 0.5rem 3rem;
+    padding: 0.2rem 1rem;
+    width: 10rem;
+    height: 4rem;
     border: none;
     font-size: 30px;
     background-color: #7d0633;
     border-radius: 10px;
     color: white;
-    letter-spacing: 4px;
     font-weight: 800;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    justify-content: center;
+    gap: 1rem;
     font-family: 'Aboreto', cursive;
     @media screen and (max-width: 600px) {
      padding: 0.7rem 5rem;
+     width: 15rem;
     }
   }
 `

@@ -1,10 +1,9 @@
 import React from 'react'
-import {useRef} from 'react'
+import { useRef } from 'react'
 import styled from 'styled-components'
-import {motion} from 'framer-motion'
+import { motion } from 'framer-motion'
 
 function About() {
-  
   // const scrollRef = useRef(null)
   const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9] }
 
@@ -25,19 +24,19 @@ function About() {
     },
   }
 
-const letter = {
-  initial: {
-    y: 0,
-    
-    opacity: 0
-  },
-  animate: {
-    y: 0,
-    
-    opacity: 1,
-    transition: { duration: 1, ...transition },
-  },
-}
+  const letter = {
+    initial: {
+      y: 0,
+
+      opacity: 0,
+    },
+    animate: {
+      y: 0,
+
+      opacity: 1,
+      transition: { duration: 1, ...transition },
+    },
+  }
   return (
     <Section data-scroll-section id='about'>
       <div id='SVG'>
@@ -104,8 +103,7 @@ const letter = {
           viewport={{ once: true }}
         >
           <motion.span variants={letter}>
-            I am an <span className='stroke'>Engineer</span> Front-End Developer
-            based in Nigeria.
+            I am Front-End Developer based in Nigeria.
           </motion.span>
           <motion.span variants={letter}>
             I am highly motivated and focused driven.
@@ -134,7 +132,6 @@ const letter = {
   )
 }
 
-
 const Section = styled.div`
   overflow: hidden;
   max-width: 100vw;
@@ -154,13 +151,10 @@ const Section = styled.div`
     padding: 2rem;
     @media screen and (max-width: 640px) {
       max-width: 90vw;
-    
+
       height: 350px;
       margin: 0 auto;
-    
-      
     }
-    
 
     .text {
       font-size: 80px;
@@ -176,14 +170,11 @@ const TextWrapper = styled(motion.div)`
   @media screen and (max-width: 640px) {
     max-width: 90vw;
     margin-top: -4rem;
-    
   }
   @media screen and (max-width: 890px) {
     max-width: 90vw;
-    
 
     margin-top: -4rem;
-    
   }
   .span {
     font-size: 20px;
@@ -203,7 +194,5 @@ const TextWrapper = styled(motion.div)`
     }
   }
 `
-
-
 
 export default About
