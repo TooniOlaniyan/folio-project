@@ -16,7 +16,7 @@ body {
 }
 body{
     max-width: 100vw;
-    /* background-color: #0F0E0E; */
+    background-color: #0F0E0E;
     
 }
 a{
@@ -29,8 +29,8 @@ li{
 h1 ,h2, h3, h4, h4, h6, p , span{
     margin: 0;
     padding: 0;
-    /* color: #D6E5FA; */
-    color: #000;
+    color: #D6E5FA;
+    /* color: #000; */
     
 }
 
