@@ -6,16 +6,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap');
 
 @font-face {
-  font-family: 'Apercu';
-  src: url(./fonts/Apercu\ Pro\ Regular.otf) format(truetype);
+  font-family: 'Moderat';
+  src: url(./fonts/Moderat-Regular.ttf) format(truetype);
   font-weight: normal;
 }
 body{
-    font-family: Apercu;
-    /* font-family: 'Syncopate', sans-serif; */
-    /* font-family: 'Aboreto', cursive; */
-    /* font-family: 'Frank Ruhl Libre', serif; */
-    /* font-family: 'Chivo', sans-serif; */
+    font-family: 'Moderat';
     
    
     

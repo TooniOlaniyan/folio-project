@@ -209,7 +209,6 @@ const TextPart = styled(motion.div)`
    
 
     span {
-      text-decoration: line-through;
       @media screen and (max-width: 640px) {
         font-size: 80px;
       }

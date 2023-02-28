@@ -2,6 +2,7 @@ import React  , {useState}from 'react'
 import styled from 'styled-components'
 import { useLocomotiveScroll } from 'react-locomotive-scroll'
 import TimeComponent from '../components/TimeComponent'
+import {FaLightbulb} from 'react-icons/fa'
 import {motion} from 'framer-motion'
 import ContactMe from './ContactMe'
 import '../App.css'
@@ -76,6 +77,9 @@ function Footer() {
           className='date'
         >
           <TimeComponent />
+          <div className='theme'>
+            <FaLightbulb fill='#000'/>
+          </div>
           <p>Designed By : 🙋‍♂️</p>
         </motion.div>
 

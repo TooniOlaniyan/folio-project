@@ -54,23 +54,22 @@ function App() {
   )
 }
   const Line = styled.div`
-    /* .scrollY {
-      position: fixed;
-      
-      top: -45rem;
+    .scrollY {
+      position: fixed; 
+      top: 20rem;
       right: 2rem;
-      bottom: 0;
+      bottom: 20rem;
       width: 0.1px;
-      background: #fff;
+      background: '#fff';
       transform-origin: 0%;
       @media screen and (max-width: 640px) {
         display: none;
       }
       @media screen and (max-width: 1024px) {
-        display: none;
+        /* display: none; */
         
       }
-    } */
+    }
     `
 
 export default App;

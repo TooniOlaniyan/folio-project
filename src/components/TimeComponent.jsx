@@ -24,7 +24,6 @@ const weekDays = ['Sun', 'Mon', 'Tues', 'Weds', 'Thurs', 'Fri', 'Sat', 'Sun']
     const day = weekDays[date.getDay()]
 
     const Time = styled.div`
-    /* background-color: red; */
     width: max-content;
       p {
         color: white;
